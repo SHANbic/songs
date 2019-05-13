@@ -8,7 +8,12 @@ class SongList extends React.Component {
       return (
         <div className="item" key={song.title}>
           <div className="right floated content">
-            <button className="ui button primary" onClick={() => this.props.songSelected(song)}>Select</button>
+            <button
+              className="ui button primary"
+              onClick={() => this.props.songSelected(song)}
+            >
+              Select
+            </button>
           </div>
           <div className="content">{song.title}</div>
         </div>
@@ -17,7 +22,7 @@ class SongList extends React.Component {
   }
   render() {
     return (
-      <div className="ui divided list" style={{ marginTop: "2rem" }}>
+      <div className="ui divided list">
         {this.renderList()}
       </div>
     );
@@ -25,7 +30,6 @@ class SongList extends React.Component {
 }
 
 const mapStateToProps = state => {
- console.log(state.selectedSong)
   return { songs: state.songs };
 };
 
